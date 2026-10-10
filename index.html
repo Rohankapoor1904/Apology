@@ -450,6 +450,60 @@
   }
   .points-actions.reveal { animation: fadeUp 0.8s ease forwards; }
 
+  /* ============ FLOATING EMOJIS ============ */
+  #emojiFloat { position: fixed; inset: 0; overflow: hidden; pointer-events: none; z-index: 2; }
+  .emoji-bubble {
+    position: absolute;
+    bottom: -14vh;
+    line-height: 1;
+    animation: floatUp linear infinite;
+    filter: drop-shadow(0 5px 8px rgba(74,44,42,0.14));
+  }
+  @keyframes floatUp {
+    0%   { transform: translateY(0) scale(0.7) rotate(-6deg); opacity: 0; }
+    12%  { opacity: 0.85; }
+    88%  { opacity: 0.85; }
+    100% { transform: translateY(-120vh) scale(1.15) rotate(22deg); opacity: 0; }
+  }
+
+  /* ============ CUTE STICKERS ============ */
+  .stickers {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: 24px 0 4px;
+  }
+
+  .sticker {
+    display: inline-grid;
+    place-items: center;
+    width: 74px;
+    height: 74px;
+    font-size: 2.1rem;
+    line-height: 1;
+    background: radial-gradient(circle at 35% 28%, #ffffff, #fdeef0);
+    border-radius: 50%;
+    box-shadow:
+      0 14px 26px -14px var(--shadow),
+      inset 0 0 0 3px rgba(255,255,255,0.92),
+      0 0 0 2px rgba(201,162,75,0.32);
+  }
+  .sticker svg { width: 48px; height: 48px; }
+
+  .sticker.bounce { animation: bounceY 1.7s ease-in-out infinite; }
+  .sticker.wiggle { animation: wiggle 2.6s ease-in-out infinite; }
+  .sticker.pulse  { animation: beat 1.5s ease-in-out infinite; }
+
+  @keyframes bounceY { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-11px)} }
+  @keyframes wiggle  { 0%,100%{transform:rotate(-9deg)} 50%{transform:rotate(9deg)} }
+  @keyframes beat    { 0%,100%{transform:scale(1)} 50%{transform:scale(1.14)} }
+
+  /* blinking cute face sticker (animated) */
+  .blink { transform-box: fill-box; transform-origin: center; animation: blinkAnim 4s infinite; }
+  @keyframes blinkAnim { 0%, 90%, 100% { transform: scaleY(1); } 95% { transform: scaleY(0.1); } }
+
   @keyframes fadeUp {
     to { opacity: 1; transform: translateY(0); }
   }
@@ -469,6 +523,7 @@
 <body>
 
 <div id="petals" aria-hidden="true"></div>
+<div id="emojiFloat" aria-hidden="true"></div>
 <canvas id="confetti" aria-hidden="true"></canvas>
 
 <!-- ============ ENVELOPE ============ -->
@@ -480,6 +535,13 @@
       <div class="flap"></div>
       <div class="seal">&#10084;</div>
     </div>
+  </div>
+
+  <div class="stickers" aria-hidden="true">
+    <span class="sticker bounce">&#128140;</span>
+    <span class="sticker wiggle">&#128149;</span>
+    <span class="sticker pulse">&#128150;</span>
+    <span class="sticker bounce">&#129392;</span>
   </div>
 
   <p class="hint">Kholne ke liye tap karo &#8594;</p>
@@ -498,6 +560,13 @@
   <div class="signature">Tumhara hi</div>
   <div class="sig-sub">Dil se, hamesha</div>
 
+  <div class="stickers" aria-hidden="true">
+    <span class="sticker pulse">&#10084;&#65039;</span>
+    <span class="sticker bounce">&#128571;</span>
+    <span class="sticker wiggle">&#127801;</span>
+    <span class="sticker bounce">&#129303;</span>
+  </div>
+
   <div class="letter-actions" id="letterActions">
     <button class="btn-next" id="toPointsBtn">Aage padho &#8594;</button>
   </div>
@@ -507,6 +576,13 @@
 <section class="points" id="points" aria-live="polite">
   <h2 class="points-title">Kuch baatein, dil se</h2>
   <p class="points-sub">jo main kehna chahta tha, par shabdon mein nahi keh paaya</p>
+
+  <div class="stickers" aria-hidden="true">
+    <span class="sticker bounce">&#128522;</span>
+    <span class="sticker pulse">&#128149;</span>
+    <span class="sticker wiggle">&#129303;</span>
+    <span class="sticker bounce">&#127775;</span>
+  </div>
 
   <div class="cards" id="cards">
     <div class="card">
@@ -561,6 +637,11 @@
 <section class="points" id="question" aria-live="polite">
   <h2 class="q-title">Maaf karogi?</h2>
   <p class="q-sub">koi pressure nahi... okay, thoda sa hai</p>
+  <div class="stickers" aria-hidden="true">
+    <span class="sticker pulse">&#129402;</span>
+    <span class="sticker bounce">&#128591;</span>
+    <span class="sticker wiggle">&#10084;&#65039;</span>
+  </div>
   <div class="btns">
     <button class="yes" id="yesBtn">Haan, aa jao idhar &#10084;</button>
     <button class="no" id="noBtn">Nahi</button>
@@ -571,7 +652,14 @@
 <section class="celebrate" id="celebrate" aria-live="polite">
   <div class="big-heart">&#10084;</div>
   <h2 class="celeb-title">Thank you, meri jaan</h2>
-  <p class="celeb-text">Tumne mujhe duniya ka sabse khush insaan bana diya. Vaada karta hoon, sudhar jaunga — aaj se hi. Idhar aao, sau hugs aur tumhara favourite khana mera udhaar hai.</p>
+  <p class="celeb-text">Tumne mujhe duniya ka sabse khush insaan bana diya. Vaada karta hoon, sudhar jaunga — aaj se hi. Idhar aao, tumhara favourite khana <em>meri taraf se</em>.</p>
+  <div class="stickers" aria-hidden="true">
+    <span class="sticker bounce">&#127881;</span>
+    <span class="sticker pulse">&#10084;&#65039;</span>
+    <span class="sticker wiggle">&#128525;</span>
+    <span class="sticker bounce">&#129395;</span>
+    <span class="sticker pulse">&#127873;</span>
+  </div>
   <div class="celeb-sign">Hamesha tumhara</div>
 </section>
 
@@ -591,6 +679,25 @@
     p.style.animationDelay = (-Math.random() * 18) + 's';
     p.style.opacity = 0.25 + Math.random() * 0.4;
     wrap.appendChild(p);
+  }
+})();
+
+/* ---------------- floating cutemos ---------------- */
+(function () {
+  const wrap = document.getElementById('emojiFloat');
+  const emojis = ['\u{1F495}', '\u{1F496}', '\u{1F338}', '\u{1F970}', '\u{1F618}', '\u{1F48C}', '\u2728', '\u{1F337}', '\u{1F490}', '\u{1F60A}', '\u{1F98B}', '\u{1F49E}'];
+  const count = window.innerWidth < 600 ? 10 : 18;
+  for (let i = 0; i < count; i++) {
+    const e = document.createElement('span');
+    e.className = 'emoji-bubble';
+    e.textContent = emojis[i % emojis.length];
+    const size = 16 + Math.random() * 18;
+    e.style.fontSize = size + 'px';
+    e.style.left = Math.random() * 96 + 'vw';
+    e.style.animationDuration = (8 + Math.random() * 9) + 's';
+    e.style.animationDelay = (-Math.random() * 16) + 's';
+    e.style.opacity = 0.4 + Math.random() * 0.45;
+    wrap.appendChild(e);
   }
 })();
 
