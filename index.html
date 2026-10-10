@@ -40,10 +40,16 @@
     min-height: 100vh;
     overflow-x: hidden;
     display: flex;
+    flex-direction: column;
     align-items: center;
-    justify-content: center;
-    padding: 24px;
+    padding: 28px 24px;
     position: relative;
+  }
+
+  /* center content vertically, but NEVER clip tall content at the top */
+  body > main,
+  body > section {
+    margin-block: auto;
   }
 
   /* ---------- soft paper grain ---------- */
