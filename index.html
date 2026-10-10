@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Sorry — A Letter From My Heart</title>
+<title>Sorry — Dil Se Maafi</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -371,38 +371,38 @@
 
 <!-- ============ ENVELOPE ============ -->
 <main class="stage" id="stage">
-  <p class="pre-title">A little something, just for you</p>
+  <p class="pre-title">Sirf tumhare liye, ek chhoti si baat</p>
 
-  <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Open the letter">
+  <div class="envelope-wrap" id="envelope" role="button" tabindex="0" aria-label="Chitthi kholo">
     <div class="envelope">
       <div class="flap"></div>
       <div class="seal">&#10084;</div>
     </div>
   </div>
 
-  <p class="hint">Tap to open &#8594;</p>
+  <p class="hint">Kholne ke liye tap karo &#8594;</p>
 </main>
 
 <!-- ============ LETTER + QUESTION ============ -->
 <section class="letter" id="letter" aria-live="polite">
-  <h1 class="salutation">My Dearest,</h1>
+  <h1 class="salutation">Meri Jaan,</h1>
 
-  <p class="line">I know I messed up, and I've been carrying this heaviness in my chest ever since.</p>
-  <p class="line">You deserve to be heard, and I'm sorry if I made you feel anything less than <em>loved</em>.</p>
-  <p class="line">I'm not here to make excuses. I'm here because <em>you matter to me</em> — more than a fight, more than my ego, more than being right.</p>
-  <p class="line">If I could take back the moment that hurt you, I would. Since I can't, I'll spend my energy making sure you feel safe and cherished again.</p>
-  <p class="line">I miss your laugh. I miss us. I'm sorry — truly, completely sorry.</p>
+  <p class="line">Mujhe pata hai maine galti ki hai, aur tab se dil pe ek bojh sa laga hua hai.</p>
+  <p class="line">Tum suni jaane ki haqdaar ho, aur agar maine tumhe kabhi kam <em>pyaar</em> mehsoos karaya, toh sorry.</p>
+  <p class="line">Main bahane nahi bana raha. Main yahan hoon kyunki <em>tum meri liye sabse zyada matter karti ho</em> — kisi jhagde se, apni ego se, khud ke sahi hone se bhi zyada.</p>
+  <p class="line">Kaash main us waqt ko wapas le pata jisne tumhe dukh diya. Par nahi le sakta — isliye ab poori koshish karunga ki tum phir se safe aur pyaar mehsoos karo.</p>
+  <p class="line">Tumhari hassi ki yaad aa rahi hai. Humari yaad aa rahi hai. Sorry — dil se, poori tarah se sorry.</p>
 
-  <div class="signature">Forever yours</div>
-  <div class="sig-sub">With all my heart</div>
+  <div class="signature">Tumhara hi</div>
+  <div class="sig-sub">Dil se, hamesha</div>
 
   <!-- ============ QUESTION ============ -->
   <div class="question" id="question">
-    <h2 class="q-title">Can you forgive me?</h2>
-    <p class="q-sub">no pressure... okay, maybe a little</p>
+    <h2 class="q-title">Maaf karogi?</h2>
+    <p class="q-sub">koi pressure nahi... okay, thoda sa hai</p>
     <div class="btns">
-      <button class="yes" id="yesBtn">Yes, come here &#10084;</button>
-      <button class="no" id="noBtn">No</button>
+      <button class="yes" id="yesBtn">Haan, aa jao idhar &#10084;</button>
+      <button class="no" id="noBtn">Nahi</button>
     </div>
   </div>
 </section>
@@ -410,9 +410,9 @@
 <!-- ============ CELEBRATION ============ -->
 <section class="celebrate" id="celebrate" aria-live="polite">
   <div class="big-heart">&#10084;</div>
-  <h2 class="celeb-title">Thank you, my love</h2>
-  <p class="celeb-text">You just made me the happiest person alive. I promise to be better — starting now. Come here, I owe you a hundred hugs and your favorite food.</p>
-  <div class="celeb-sign">Yours, always &amp; completely</div>
+  <h2 class="celeb-title">Thank you, meri jaan</h2>
+  <p class="celeb-text">Tumne mujhe duniya ka sabse khush insaan bana diya. Vaada karta hoon, sudhar jaunga — aaj se hi. Idhar aao, sau hugs aur tumhara favourite khana mera udhaar hai.</p>
+  <div class="celeb-sign">Hamesha tumhara</div>
 </section>
 
 <script>
@@ -474,10 +474,10 @@ function revealLines() {
 const noBtn = document.getElementById('noBtn');
 const yesBtn = document.getElementById('yesBtn');
 const noTexts = [
-  'No', 'Are you sure?', 'Really sure?', 'Think again...',
-  'Last chance!', 'Surely not?', 'You might regret this...',
-  'Give it another thought.', 'Are you positive?', 'Pretty please?',
-  'I\'m gonna cry...', 'You\'re breaking my heart.', 'Okay fine, just kidding.'
+  'Nahi', 'Pakka?', 'Sach me nahi?', 'Ek baar phir soch lo...',
+  'Aakhri mauka!', 'Bilkul nahi?', 'Baad me pachtaogi...',
+  'Ek baar aur soch lo.', 'Pakka nahi?', 'Please na...',
+  'Rone lag jaunga...', 'Dil tod diya tumne.', 'Theek hai, mazak kar raha tha.'
 ];
 
 let dodgeCount = 0;
